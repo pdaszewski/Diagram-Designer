@@ -1,3 +1,8 @@
+{
+Cały projekt musi trafić do przebudowy.
+Jest nowy z 2018 roku i warto zastosować w nim dobre praktyki projektowania i czystego kodu.
+}
+
 program StatusDiagramDesigner;
 
 uses
@@ -12,7 +17,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.Title := 'Projektowanie diagramu status�w';
+  Application.Title := 'Projektowanie diagramu statusów';
   Application.CreateForm(TDiagramDev, DiagramDev);
   Application.CreateForm(TDiagramPowiazanie, DiagramPowiazanie);
   Application.Run;
