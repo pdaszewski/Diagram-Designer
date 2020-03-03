@@ -88,9 +88,8 @@
             <Form>DiagramDev</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="DiagramPowiazanie_frm.pas">
+        <DCCReference Include="DiagramRelationship_frm.pas">
             <Form>DiagramPowiazanie</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

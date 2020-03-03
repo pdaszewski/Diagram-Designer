@@ -8,7 +8,7 @@ program StatusDiagramDesigner;
 uses
   Vcl.Forms,
   DiagramDev_frm in 'DiagramDev_frm.pas' {DiagramDev},
-  DiagramPowiazanie_frm in 'DiagramPowiazanie_frm.pas' {DiagramPowiazanie},
+  DiagramRelationship_frm in 'DiagramRelationship_frm.pas' {DiagramPowiazanie},
   Vcl.Themes,
   Vcl.Styles;
 
@@ -19,6 +19,6 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Projektowanie diagramu statusów';
   Application.CreateForm(TDiagramDev, DiagramDev);
-  Application.CreateForm(TDiagramPowiazanie, DiagramPowiazanie);
+  Application.CreateForm(TDiagramRelationship, DiagramRelationship);
   Application.Run;
 end.

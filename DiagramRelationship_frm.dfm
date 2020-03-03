@@ -1,4 +1,4 @@
-object DiagramPowiazanie: TDiagramPowiazanie
+object DiagramRelationship: TDiagramRelationship
   Left = 0
   Top = 0
   BorderStyle = bsDialog

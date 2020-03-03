@@ -108,7 +108,7 @@ type
   end;
 
 const
-  wersja = '0.7.0.0';
+  wersja = '0.7.0.2';
 
 var
   DiagramDev: TDiagramDev;
@@ -118,7 +118,7 @@ implementation
 
 {$R *.dfm}
 
-uses DiagramPowiazanie_frm;
+uses DiagramRelationship_frm;
 
 procedure TDiagramDev.Czysc_tablice;
 var
@@ -669,21 +669,21 @@ begin
   status := Trim((PopupMenuPanelu.PopupComponent as TPanel).Caption);
   if status <> '' then
   Begin
-    DiagramPowiazanie.pnl_wzor.Caption := status;
-    DiagramPowiazanie.cbox_nazwy.Clear;
+    DiagramRelationship.pnl_wzor.Caption := status;
+    DiagramRelationship.cbox_nazwy.Clear;
     for i := 1 to max_obiektow do
     Begin
       if Assigned(Diagram[i].panel) then
       Begin
         if Diagram[i].panel.Caption <> status then
-          DiagramPowiazanie.cbox_nazwy.Items.Add(Diagram[i].panel.Caption);
+          DiagramRelationship.cbox_nazwy.Items.Add(Diagram[i].panel.Caption);
       End;
     End;
-    DiagramPowiazanie.cbox_od.Checked := False;
-    DiagramPowiazanie.cbox_do.Checked := True;
-    DiagramPowiazanie.Show;
-    if DiagramPowiazanie.cbox_nazwy.Items.Count = 1 then
-      DiagramPowiazanie.cbox_nazwy.ItemIndex := 0;
+    DiagramRelationship.cbox_od.Checked := False;
+    DiagramRelationship.cbox_do.Checked := True;
+    DiagramRelationship.Show;
+    if DiagramRelationship.cbox_nazwy.Items.Count = 1 then
+      DiagramRelationship.cbox_nazwy.ItemIndex := 0;
   End
   else
     ShowMessage('Obiekt musi mieæ zdefiniowan¹ nazwê!');

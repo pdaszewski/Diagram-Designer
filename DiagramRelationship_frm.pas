@@ -1,4 +1,4 @@
-unit DiagramPowiazanie_frm;
+unit DiagramRelationship_frm;
 
 interface
 
@@ -8,7 +8,7 @@ uses
   Vcl.Imaging.pngimage;
 
 type
-  TDiagramPowiazanie = class(TForm)
+  TDiagramRelationship = class(TForm)
     pnl_wzor: TPanel;
     Panel1: TPanel;
     cbox_nazwy: TComboBox;
@@ -25,7 +25,7 @@ type
   end;
 
 var
-  DiagramPowiazanie: TDiagramPowiazanie;
+  DiagramRelationship: TDiagramRelationship;
 
 implementation
 
@@ -33,7 +33,7 @@ implementation
 
 uses DiagramDev_frm;
 
-procedure TDiagramPowiazanie.btn_dodaj_powiazanieClick(Sender: TObject);
+procedure TDiagramRelationship.btn_dodaj_powiazanieClick(Sender: TObject);
 var
   panel1_status: string;
   panel2_status: string;
