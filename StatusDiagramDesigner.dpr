@@ -17,7 +17,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.Title := 'Projektowanie diagramu statusów';
+  Application.Title := 'Status diagram design';
   Application.CreateForm(TDiagramDev, DiagramDev);
   Application.CreateForm(TDiagramRelationship, DiagramRelationship);
   Application.Run;

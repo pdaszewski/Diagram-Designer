@@ -108,7 +108,7 @@ type
   end;
 
 const
-  wersja = '0.7.0.2';
+  wersja = '0.7.0.4';
 
 var
   DiagramDev: TDiagramDev;
@@ -125,8 +125,8 @@ var
   i: Integer;
 begin
   /// <summary>
-  /// Funkcja czyœci nie tylko tablice samych obiektów, ale równie¿ powi¹zañ miêdzy nimi!
-  /// Czyszczone tablice: Powiazania i Diagram
+  /// The function cleans not only arrays of objects themselves, but also links between them!
+  /// Cleaned tables: Bindings and Diagram
   /// </summary>
   if ostatni_obiekt > 0 then
   Begin
@@ -489,10 +489,10 @@ begin
   End;
 
   if czy_znaleziono_niepowiazane = True then
-    ShowMessage('UWAGA!!!' + #13 +
-      'Znaleziono i oznaczono obiekty niepowi¹zane!')
+    ShowMessage('ATTENTION!!!' + #13 +
+      'Unrelated objects were found and marked!')
   else
-    ShowMessage('Struktura spójna!' + #13 + 'Wszystko OK!');
+    ShowMessage('Coherent structure!' + #13 + 'All OK!');
 end;
 
 procedure TDiagramDev.Usuobiekt1Click(Sender: TObject);
@@ -614,7 +614,7 @@ begin
 
   if cbox_zadaj_nazwy.Checked then
   Begin
-    nowa_nazwa := Trim(InputBox('Nazwa statusu', 'Status: ', panel.Caption));
+    nowa_nazwa := Trim(InputBox('Status Name', 'Status: ', panel.Caption));
     czy_ok := True;
 
     for i := 1 to max_obiektow do
@@ -630,18 +630,18 @@ begin
     if czy_ok then
       panel.Caption := nowa_nazwa
     else
-      ShowMessage('Podany status ju¿ istnieje!' + #13 +
-        'Obiekt zosta³ dodany, ale nale¿y przydzieliæ mu niepowtarzalny status!');
+      ShowMessage('The status already exists!' + #13 +
+        'The object has been added, but it must be given a unique status!');
   End;
 
   ostatni_obiekt := ostatni_obiekt + 1;
 
-  // Tu mo¿emy dodaæ funkcjê wpisywania obiektu do bazy danych i pobierania identyfikatora bazy!
+  // Here we can add the function of entering the object into the database and retrieving the database identifier!
   id := IntToStr(ostatni_obiekt);
 
   Diagram[ostatni_obiekt].id_obiektu := StrToInt(id);
   Diagram[ostatni_obiekt].panel := panel;
-  panel.Hint := 'ID obiektu: ' + id;
+  panel.Hint := 'Object ID: ' + id;
 
   Rysuj_powiazania;
 end;
@@ -686,7 +686,7 @@ begin
       DiagramRelationship.cbox_nazwy.ItemIndex := 0;
   End
   else
-    ShowMessage('Obiekt musi mieæ zdefiniowan¹ nazwê!');
+    ShowMessage('The object must have a name defined!');
 end;
 
 procedure TDiagramDev.EksportujdiagramdoplikuPNG1Click(Sender: TObject);
@@ -725,7 +725,7 @@ end;
 
 procedure TDiagramDev.FormCreate(Sender: TObject);
 begin
-  Caption := 'Diagram przep³ywu statusów - Wersja: ' + wersja;
+  Caption := 'Status flow diagram - Version: ' + wersja;
   ostatni_obiekt := 0;
   DoubleBuffered := True;
 end;
@@ -864,7 +864,7 @@ begin
         panel.PopupMenu := pnl_wzor.PopupMenu;
         panel.StyleElements := pnl_wzor.StyleElements;
         panel.ShowHint := True;
-        panel.Hint := 'ID obiektu: ' + id;
+        panel.Hint := 'Object ID: ' + id;
 
         ostatni_obiekt := ostatni_obiekt + 1;
         Diagram[ostatni_obiekt].id_obiektu := StrToInt(id);
@@ -906,8 +906,8 @@ begin
     if FileExists(SaveDialog.FileName) then
     Begin
       wyb := MessageBox(Handle,
-        PWideChar('Czy na pewno chcesz zast¹piæ wskazany plik?' + #13 +
-        'Istniej¹cy diagram zostanie nadpisany!!!!'), 'Zast¹piæ plik diagramu?',
+        PWideChar('Are you sure you want to replace the selected file?' + #13 +
+        'The existing diagram will be overwritten !!!!'), 'Replace diagram file?',
         MB_YESNO + MB_ICONQUESTION);
       if wyb = mrYes then
         czy_zapisac := True;
@@ -946,7 +946,7 @@ begin
         End;
       End;
       CloseFile(plik);
-      ShowMessage('Diagram poprawnie zapisano do pliku:' + #13 +
+      ShowMessage('The diagram was correctly saved to the file:' + #13 +
         SaveDialog.FileName);
     End;
   End;
@@ -958,7 +958,7 @@ var
   czy_ok: Boolean;
   i: Integer;
 begin
-  nowa_nazwa := Trim(InputBox('Nazwa statusu', 'Status: ',
+  nowa_nazwa := Trim(InputBox('Status Name', 'Status: ',
     (PopupMenuPanelu.PopupComponent as TPanel).Caption));
   czy_ok := True;
 
@@ -975,7 +975,7 @@ begin
   if czy_ok then
     (PopupMenuPanelu.PopupComponent as TPanel).Caption := nowa_nazwa
   else
-    ShowMessage('Podany status ju¿ istnieje!');
+    ShowMessage('The status already exists!');
 end;
 
 end.

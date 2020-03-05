@@ -5,7 +5,7 @@ object DiagramDev: TDiagramDev
   Height = 752
   AlphaBlendValue = 245
   AutoScroll = True
-  Caption = 'Diagram przep'#322'ywu status'#243'w'
+  Caption = 'Status flow diagram'
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -29,7 +29,7 @@ object DiagramDev: TDiagramDev
     BevelKind = bkFlat
     BevelOuter = bvNone
     BorderWidth = 2
-    Caption = 'Nowy status'
+    Caption = 'New Status'
     Color = 11141120
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
@@ -60,7 +60,7 @@ object DiagramDev: TDiagramDev
       Top = 6
       Width = 121
       Height = 25
-      Caption = 'nowy status'
+      Caption = 'New Status'
       TabOrder = 0
       OnClick = btn_nowyClick
     end
@@ -79,25 +79,25 @@ object DiagramDev: TDiagramDev
     Left = 408
     Top = 168
     object Zmienazw1: TMenuItem
-      Caption = 'Zmie'#324' nazw'#281
+      Caption = 'Rename'
       OnClick = Zmienazw1Click
     end
     object Dodajpowizanie1: TMenuItem
-      Caption = 'Dodaj powi'#261'zanie'
+      Caption = 'Add association'
       OnClick = Dodajpowizanie1Click
     end
     object N1: TMenuItem
       Caption = '-'
     end
     object Usupowizaniategoobiektu1: TMenuItem
-      Caption = 'Usu'#324' wszystkie powi'#261'zania dla tego obiektu'
+      Caption = 'Delete all associations for this object'
       OnClick = Usupowizaniategoobiektu1Click
     end
     object N5: TMenuItem
       Caption = '-'
     end
     object Usuobiekt1: TMenuItem
-      Caption = 'Usu'#324' obiekt'
+      Caption = 'Delete object'
       OnClick = Usuobiekt1Click
     end
   end
@@ -107,48 +107,48 @@ object DiagramDev: TDiagramDev
     object Diagram1: TMenuItem
       Caption = 'Diagram'
       object Nowy1: TMenuItem
-        Caption = 'Nowy'
+        Caption = 'New'
         OnClick = Nowy1Click
       end
       object Wczytajdiagramzpliku1: TMenuItem
-        Caption = 'Wczytaj z pliku'
+        Caption = 'Load from file'
         OnClick = Wczytajdiagramzpliku1Click
       end
       object Zapiszdopliku1: TMenuItem
-        Caption = 'Zapisz do pliku'
+        Caption = 'Save to file'
         OnClick = Zapiszdopliku1Click
       end
       object N3: TMenuItem
         Caption = '-'
       end
       object EksportujdiagramdoplikuPNG1: TMenuItem
-        Caption = 'Eksportuj do pliku PNG'
+        Caption = 'Export to PNG'
         OnClick = EksportujdiagramdoplikuPNG1Click
       end
       object N2: TMenuItem
         Caption = '-'
       end
       object Zamknij1: TMenuItem
-        Caption = 'Zamknij'
+        Caption = 'Close'
         OnClick = Zamknij1Click
       end
     end
     object Narzdzia1: TMenuItem
-      Caption = 'Narz'#281'dzia'
+      Caption = 'Tools'
       object chkPositionRunTime: TMenuItem
-        Caption = 'W'#322#261'cz ustawianie komponent'#243'w'
+        Caption = 'Enable component setting'
         Checked = True
         OnClick = chkPositionRunTimeClick
       end
       object cbox_zadaj_nazwy: TMenuItem
-        Caption = #379#261'daj nadania nazwy obiektu przy jego tworzeniu'
+        Caption = 'Request to give the object a name when creating it'
         Checked = True
       end
       object N4: TMenuItem
         Caption = '-'
       end
       object Szukajniepowizanychobiektw1: TMenuItem
-        Caption = 'Szukaj niepowi'#261'zanych obiekt'#243'w'
+        Caption = 'Search for unrelated objects'
         OnClick = Szukajniepowizanychobiektw1Click
       end
       object N6: TMenuItem
